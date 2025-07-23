@@ -1,102 +1,83 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-100 flex flex-col">
+      {/* Hero Section */}
+      <header className="w-full max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center py-16 px-4">
+        <div className="flex flex-col items-center gap-6">
+          <Image src="/next.svg" alt="Logo" width={80} height={80} className="mb-2 dark:invert" />
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 text-center leading-tight">
+            Instantly Create a <span className="text-blue-600">Booking Page</span> for Your Local Business
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 text-center max-w-2xl">
+            A beautiful, mobile-friendly SaaS to help barbers, tutors, and local pros get booked online. Share your services, let customers contact you, and accept payments—all in minutes.
+          </p>
+          <Link href="/create" className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition text-lg">
+            Get Started Free
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Features Section */}
+      <section className="w-full max-w-4xl mx-auto py-12 px-4 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+          <span className="bg-blue-100 text-blue-600 rounded-full p-3 mb-3">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </span>
+          <h3 className="font-bold text-lg mb-1">Fast Setup</h3>
+          <p className="text-gray-500 text-center">Create your page in under 2 minutes. No coding, no hassle.</p>
+        </div>
+        <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+          <span className="bg-green-100 text-green-600 rounded-full p-3 mb-3">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </span>
+          <h3 className="font-bold text-lg mb-1">All-in-One</h3>
+          <p className="text-gray-500 text-center">Showcase services, accept bookings, and get paid—all in one place.</p>
+        </div>
+        <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center">
+          <span className="bg-indigo-100 text-indigo-600 rounded-full p-3 mb-3">
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M8 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </span>
+          <h3 className="font-bold text-lg mb-1">Mobile-First</h3>
+          <p className="text-gray-500 text-center">Looks great on any device. Your customers can book from anywhere.</p>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="w-full max-w-4xl mx-auto py-12 px-4">
+        <h2 className="text-2xl font-bold text-center mb-8">How It Works</h2>
+        <div className="grid sm:grid-cols-3 gap-8">
+          <div className="flex flex-col items-center">
+            <div className="bg-blue-100 text-blue-600 rounded-full p-3 mb-2">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+            <h4 className="font-semibold mb-1">1. Fill Out Your Info</h4>
+            <p className="text-gray-500 text-center text-sm">Tell us about your business and services.</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="bg-green-100 text-green-600 rounded-full p-3 mb-2">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+            <h4 className="font-semibold mb-1">2. Get Your Link</h4>
+            <p className="text-gray-500 text-center text-sm">We generate a unique booking page for you instantly.</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="bg-indigo-100 text-indigo-600 rounded-full p-3 mb-2">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M8 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+            <h4 className="font-semibold mb-1">3. Share & Get Booked</h4>
+            <p className="text-gray-500 text-center text-sm">Share your link and start accepting bookings right away.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full border-t bg-white/80 py-6 mt-auto flex justify-center">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between px-4 gap-2 text-gray-500 text-sm">
+          <span>&copy; {new Date().getFullYear()} Booking Pages</span>
+        </div>
       </footer>
     </div>
   );
