@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Home() {
   return (
@@ -7,7 +6,6 @@ export default function Home() {
       {/* Hero Section */}
       <header className="w-full max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center py-16 px-4">
         <div className="flex flex-col items-center gap-6">
-          <Image src="/next.svg" alt="Logo" width={80} height={80} className="mb-2 dark:invert" />
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 text-center leading-tight">
             Instantly Create a <span className="text-blue-600">Booking Page</span> for Your Local Business
           </h1>

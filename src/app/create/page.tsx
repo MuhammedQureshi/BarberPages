@@ -58,7 +58,7 @@ function BookingPreview({
   location?: string;
 }) {
   return (
-    <div className="w-full max-w-lg bg-white rounded-2xl shadow-2xl p-6 flex flex-col gap-8 border border-gray-200">
+    <div className="w-full h-full bg-white rounded-2xl shadow-2xl p-6 flex flex-col gap-8 border border-gray-200">
       {/* Hero */}
       <div className="flex flex-col items-center gap-2 mb-2">
         {logo ? (
@@ -271,9 +271,9 @@ export default function CreateBookingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-indigo-100 flex flex-col items-center justify-center py-8 px-2">
-      <div className="w-full max-w-7xl flex flex-col md:flex-row gap-10 items-start justify-center">
+      <div className="w-full flex flex-col md:flex-row items-start justify-center">
         {/* Form */}
-        <div className="flex-1 w-full max-w-xl mx-auto">
+        <div className="flex-1 p-6 md:p-12">
           <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
             {/* Business Info */}
             <Card>
@@ -593,12 +593,10 @@ export default function CreateBookingPage() {
             {error && <div className="text-red-700 text-center font-semibold mt-2">{error}</div>}
           </form>
         </div>
+        {/* Separator (desktop only) */}
+        <div className="hidden md:block h-[90vh] w-px bg-gray-200 mx-0" />
         {/* Live Preview */}
-        <div className="flex-1 w-full max-w-lg sticky top-8 hidden md:block" ref={previewRef}>
-          <BookingPreview {...form} />
-        </div>
-        {/* On mobile, show preview below form */}
-        <div className="block md:hidden mt-8 w-full" ref={previewRef}>
+        <div className="flex-1 p-6 md:p-12 sticky top-8 h-full" ref={previewRef}>
           <BookingPreview {...form} />
         </div>
       </div>
