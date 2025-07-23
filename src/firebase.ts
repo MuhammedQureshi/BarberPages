@@ -3,7 +3,7 @@ import { initializeApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAejfRDxFvsqJfuWE9pv6gF6Hb39pMBJ1A",
+    apiKey: process.env.FIREBASE_API_KEY,
     authDomain: "booking-pages-app.firebaseapp.com",
     projectId: "booking-pages-app",
     storageBucket: "booking-pages-app.firebasestorage.app",
